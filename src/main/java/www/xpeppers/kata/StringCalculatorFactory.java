@@ -12,7 +12,7 @@ import www.xpeppers.kata.calculator.SingleNumber;
 public class StringCalculatorFactory {
 
     public static StringCalculator create() {
-        List<Calculator> calculators = asList(new CommaAndCarriageReturnDelimitedNumbers(), new SingleNumber(), new EmptyString());
+        List<Calculator> calculators = asList(new CustomDelimiterString(), new CommaAndCarriageReturnDelimitedNumbers(), new SingleNumber(), new EmptyString());
         return new StringCalculator(calculators);
     }
 

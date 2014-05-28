@@ -26,6 +26,11 @@ public class StringCalculatorTest {
         assertEquals(6, sum("1,2\n3"));
     }
 
+    @Test
+    public void customDelimiterInTheHeaderOfTheString() {
+        assertEquals(6, sum("//;\\n1;2;3"));
+    }
+
     private int sum(String stringOfNumbers) {
         StringCalculator calculator = StringCalculatorFactory.create();
         return calculator.sum(stringOfNumbers);
