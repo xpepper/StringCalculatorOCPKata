@@ -1,6 +1,6 @@
 package www.xpeppers.kata.calculator;
 
-public class EmptyString implements Calculator {
+public class EmptyStringRule implements CalculatorRule {
 
     public boolean canHandle(String stringOfNumbers) {
         return stringOfNumbers.isEmpty();

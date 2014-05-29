@@ -1,19 +1,17 @@
 package www.xpeppers.kata;
 
-import static java.util.Arrays.*;
-
-import java.util.List;
-
-import www.xpeppers.kata.calculator.Calculator;
-import www.xpeppers.kata.calculator.CommaAndCarriageReturnDelimitedNumbers;
-import www.xpeppers.kata.calculator.EmptyString;
-import www.xpeppers.kata.calculator.SingleNumber;
+import www.xpeppers.kata.calculator.CommaAndCarriageReturnDelimitedNumbersRule;
+import www.xpeppers.kata.calculator.CustomDelimiterStringRule;
+import www.xpeppers.kata.calculator.EmptyStringRule;
 
 public class StringCalculatorFactory {
 
     public static StringCalculator create() {
-        List<Calculator> calculators = asList(new CustomDelimiterString(), new CommaAndCarriageReturnDelimitedNumbers(), new SingleNumber(), new EmptyString());
-        return new StringCalculator(calculators);
+        return new StringCalculator(
+                    new CustomDelimiterStringRule(),
+                    new CommaAndCarriageReturnDelimitedNumbersRule(),
+                    new EmptyStringRule()
+                  );
     }
 
 }

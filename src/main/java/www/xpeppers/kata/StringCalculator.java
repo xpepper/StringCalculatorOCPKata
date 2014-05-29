@@ -1,21 +1,19 @@
 package www.xpeppers.kata;
 
-import java.util.List;
-
-import www.xpeppers.kata.calculator.Calculator;
+import www.xpeppers.kata.calculator.CalculatorRule;
 
 public class StringCalculator {
 
-    private List<Calculator> calculators;
+    private CalculatorRule[] rules;
 
-    public StringCalculator(List<Calculator> calculators) {
-        this.calculators = calculators;
+    public StringCalculator(CalculatorRule... rules) {
+        this.rules = rules;
     }
 
-    public int sum(String stringOfNumbers) {
-        for (Calculator calculator : calculators) {
-            if (calculator.canHandle(stringOfNumbers))
-                return calculator.sum(stringOfNumbers);
+    public int sum(String stringOfNumbers) throws Exception {
+        for (CalculatorRule rule : rules) {
+            if (rule.canHandle(stringOfNumbers))
+                return rule.sum(stringOfNumbers);
         }
         return -1;
     }

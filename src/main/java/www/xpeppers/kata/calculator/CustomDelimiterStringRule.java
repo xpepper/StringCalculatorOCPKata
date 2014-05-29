@@ -1,10 +1,10 @@
-package www.xpeppers.kata;
+package www.xpeppers.kata.calculator;
 
-import www.xpeppers.kata.calculator.Calculator;
+import www.xpeppers.kata.StringNumbersAdder;
 
-public class CustomDelimiterString implements Calculator {
+public class CustomDelimiterStringRule implements CalculatorRule {
 
-    public int sum(String stringOfNumbers) {
+    public int sum(String stringOfNumbers) throws Exception {
         String customDelimiter = stringOfNumbers.substring(2, 3);
         stringOfNumbers = stringOfNumbers.substring(5);
 
@@ -15,7 +15,7 @@ public class CustomDelimiterString implements Calculator {
         return stringOfNumbers.startsWith("//");
     }
 
-    private int sum(String stringOfNumbers, String allowedDelimiters) {
+    private int sum(String stringOfNumbers, String allowedDelimiters) throws Exception {
         return new StringNumbersAdder(allowedDelimiters).sum(stringOfNumbers);
     }
 
